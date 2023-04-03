@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  </head>
+  <body>
+
+
+<!-- Code for nav bar -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> My Weather</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Top Locations
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Patna</a></li>
+                  <li><a class="dropdown-item" href="#">Delhi</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Banglore</a></li>
+                </ul>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li> -->
+            </ul>
+            <form class="d-flex" role="search">
+              <input id="city" class="form-control me-2" type="search" placeholder="Search for Location" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+
+
+<!-- code for weather cards -->
+
+
+<div class="container">
+
+    <h1 class="my-4 text-center">Weather Details: <span id="cityName"></span> </h1>
+
+    <main>
+
+        <!-- card 1st -->
+
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Temperatures</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><span id="temp2"></span><small class="text-body-secondary fw-light">&deg;C</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Temperature: <span id="temp"></span>&deg;C   </li>
+                  <li>Max Temperature: <span id="max_temp"></span>&deg;C</li>
+                  <li>Min Temperature: <span id="min_temp"></span>&deg;C</li>
+                 
+                  
+                </ul>
+                <a href="http://www.msn.com/en-in/weather/forecast/in" target="_blank" rel="noopener noreferrer">
+                <button type="button" class="w-100 btn btn-lg btn-outline-primary"> More Info</button>
+            </a>
+              </div>
+            </div>
+          </div>
+
+<!-- card 2nd -->
+
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Humidity</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small class="text-body-secondary fw-light"> &percnt;</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <!-- <li>Cloud PCT: <span id="cloud_pct"></span></li> -->
+                    <li>Wind Degrees: <span id="wind_degrees"></span></li>
+                    <li>Feels Like: <span id="feels_like"></span>&deg;C</li>
+                    <li>Humidity: <span id="humidity"></span>&percnt;</li>
+                </ul>
+                <a href="http://www.msn.com/en-in/weather/forecast/in" target="_blank" rel="noopener noreferrer">
+                <button type="button" class="w-100 btn btn-lg btn-primary">More Info</button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+<!-- card 3rd -->
+
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Wind & Sun</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><span id="wind_speed2"></span><small class="text-body-secondary fw-light"> km/h</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                 <li>Wind Speed: <span id="wind_speed"></span> km/h</li>
+                 <!-- <li>Wind Degrees: <span id="wind_degrees"></span></li> -->
+                 <li>Sunrise: <span id="sunrise"></span></li>
+                 <li>Sunset: <span id="sunset"></span></li>
+                </ul>
+                <a href="http://www.msn.com/en-in/weather/forecast/in" target="_blank" rel="noopener noreferrer">
+                <button type="button" class="w-100 btn btn-lg btn-primary">More Info</button>
+            </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+
+<!-- temperature converter -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+
+<div class="container1">
+  <div class="title">
+    <h2>Convert Here</h2>
+    <span class="temperature-icon"><i class="fa-solid fa-temperature-three-quarters"></i>
+    </span>
+  </div>
+
+  <div id="celcius">
+    <input type="number" name="" placeholder="Celsius">
+    <span class="icon">&deg;C</span>
+  </div>
+
+  <div id="fahrenheit">
+    <input type="number" name="" placeholder="Fahrenheit">
+    <span class="icon">&deg;F</span>
+  </div>
+
+  <div id="kelvin">
+    <input type="number" name="" placeholder="Kelvin">
+    <span class="icon">K</span>
+  </div>
+
+  <div class="button">
+    <button>Clear All</button>
+  </div>
+
+</div>
+
+
+
+
+<!-- other cities -->
+
+        <!-- <h2 class="display-6 text-center mb-4">Other Cities</h2>
+    
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 34%;"></th>
+                <th style="width: 22%;">cloud_pct</th>
+                <th style="width: 22%;">fells_like</th>
+                <th style="width: 22%;">humidity</th>
+                <th style="width: 22%;">max_temp</th>
+                <th style="width: 22%;">min_temp</th>
+                <th style="width: 22%;">sunrise</th>
+                <th style="width: 22%;">sunset</th>
+                <th style="width: 22%;">temp</th>
+                <th style="width: 22%;">wind_degrees</th>
+                <th style="width: 22%;">wind_speed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr> -->
+    <!-- banglore -->
+
+                <!-- <th scope="row" class="text-start">Banglore</th>
+                
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td> -->
+                
+<!-- kolkata -->
+              <!-- </tr>
+              <tr>
+                <th scope="row" class="text-start">Kolkata</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+              </tr>
+            </tbody>
+    
+            <tbody> -->
+
+<!-- raipur -->
+<!-- 
+              <tr>
+                <th scope="row" class="text-start">Raipur</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+              </tr> -->
+
+<!-- jaipur -->
+
+              <!-- <tr>
+                <th scope="row" class="text-start">Jaipur</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div> -->
+      </main>
+
+</div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+
+<script src="api.js"></script>
+<script src="Tempconverter.js"></script>
+
+  </body>
+</html>
